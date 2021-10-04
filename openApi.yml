@@ -221,7 +221,7 @@ components:
         customerId: 
           type: string
           maxLength: 10
-          description: Max length 10. This is a [Foundation Id Field]("https://api.foundationsoft.com/docs/idfields")
+          description: Max length 10. This is a 
         name: 
           type: string
           maxLength: 30
@@ -369,7 +369,7 @@ components:
         customerId: 
           type: string
           maxLength: 10
-          description: Value must refer to an existing [customerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-Customers) in Foundation Desktop Software.
+          description: Value must refer to an existing 
         originalContract: 
           type: number
           maxLength: 12
@@ -411,18 +411,18 @@ components:
           description: maxLength = 30. 
         jobStartDate: 
           type: string
-          description: See [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+          description: See 
         jobEndDate: 
           type: string
-          description: See [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+          description: See 
         projectManagerId: 
           type: string
           maxLength: 10
-          description: Value must refer to an existing [projectManagerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-ProjectManagers) in Foundation Desktop Software.
+          description: Value must refer to an existing 
         taxGroupId: 
           type: string
           maxLength: 10
-          description: maxLength = 10. Value must refer to an existing [taxGroupId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-TaxGroups) in Foundation Desktop Software.
+          description: maxLength = 10. Value must refer to an existing 
         isBudgeted: 
           type: boolean
           description: Whether a job has a budget in Foundation Desktop software
@@ -449,7 +449,7 @@ components:
         customerId: 
           type: string
           maxLength: 10
-          description: Value must refer to an existing [customerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-Customers) in Foundation Desktop Software.
+          description: Value must refer to an existing 
         originalContract: 
           type: number
           maxLength: 12
@@ -491,18 +491,18 @@ components:
           description: maxLength = 30. 
         jobStartDate: 
           type: string
-          description: See [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+          description: See 
         jobEndDate: 
           type: string
-          description: See [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+          description: See 
         projectManagerId: 
           type: string
           maxLength: 10
-          description: Value must refer to an existing [projectManagerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-ProjectManagers) in Foundation Desktop Software.
+          description: Value must refer to an existing 
         taxGroupId: 
           type: string
           maxLength: 10
-          description: maxLength = 10. Value must refer to an existing [taxGroupId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-TaxGroups) in Foundation Desktop Software.
+          description: maxLength = 10. Value must refer to an existing
         isBudgeted: 
           type: boolean
           description: Whether a job has a budget in Foundation Desktop software
@@ -527,7 +527,7 @@ components:
         customerId: 
           type: string
           maxLength: 10
-          description: Value must refer to an existing [customerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-Customers) in Foundation Desktop Software.
+          description: Value must refer to an existing 
         originalContract: 
           type: number
           maxLength: 12
@@ -569,18 +569,18 @@ components:
           description: maxLength = 30. 
         jobStartDate: 
           type: string
-          description: See [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+          description: See 
         jobEndDate: 
           type: string
-          description: See [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+          description: See
         projectManagerId: 
           type: string
           maxLength: 10
-          description: Value must refer to an existing [projectManagerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-ProjectManagers) in Foundation Desktop Software.
+          description:
         taxGroupId: 
           type: string
           maxLength: 10
-          description: maxLength = 10. Value must refer to an existing [taxGroupId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-TaxGroups) in Foundation Desktop Software.
+          description: maxLength = 10. Value must refer to an existing 
         isBudgeted: 
           type: boolean
           description: Whether a job has a budget in Foundation Desktop software
