@@ -1,0 +1,594 @@
+openapi: '3.0.3'
+info:
+  title: Foundation Api
+  description: Foundation Api
+  version: '1.0'
+paths:
+  /customers:
+    get:
+      operationId: List-Customers
+      summary: List Customers
+      description: List Customers of a Foundation Company
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomerList"
+    post:
+      operationId: Create-Customers
+      summary: Create Customers
+      description: Create Customers for a Foundation Company
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/CustomerCreateList"
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CustomerList"
+        '422':
+          description: One or more fields were invalid
+  /customers/{customerId}:
+    get:
+      operationId: Show-Customer
+      summary: Show Customer
+      description: Show a Customer of a Foundation Company
+      parameters:
+      - name: "customerId"
+        in: path
+        description: "The customer Id defined in Foundation Desktop."
+        required: true
+        schema:
+            type: string
+            maxLength: 10
+            minLength: 1
+            example: "JANE1"
+            # leave off or add todo for external docs on fields
+            externalDocs:
+              url: "https://api.foundationsoft.com/docs/idfields"
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                $ref: "#/components/schemas/Customer"
+    patch:
+      operationId: Patch-Customer
+      summary: Update Customer
+      description: Make a partial update to a Customer in Foundation Software
+      # foreach parameter
+      parameters:
+      - name: "customerId"
+        in: path # if path parameter (may be query parameter)
+        description: "The customer Id defined in Foundation Desktop."
+        required: true
+        schema:
+            type: string
+            maxLength: 10
+            minLength: 1
+            example: "JANE1"
+            # if external docs
+            externalDocs:
+              url: "https://api.foundationsoft.com/docs/idfields"
+      requestBody:
+        required: true
+        content:
+          application/merge-patch+json: # will always be merge-patch+json for update
+            schema:
+              $ref: "#/components/schemas/CustomerUpdate"
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Customer"
+        '422':
+          description: One or more fields were invalid
+  /jobs:
+    description: Jobs belonging to a Foundation company
+    summary: Jobs are used in Foundation software to _. This resource follows a started REST pattern by which consumers can list, filter, and find jobs.
+    get:
+      operationId: List-Jobs
+      summary: List Jobs
+      description: List Jobs of a Foundation Company
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+          $ref: "#/components/schemas/JobList"
+    post:
+      operationId: Create-Jobs
+      summary: Create Jobs
+      description: Create Jobs for a Foundation Company
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+        $ref: "#/components/schemas/JobCreateList"
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+          $ref: "#/components/schemas/JobList"
+        '422':
+          description: One or more fields were invalid
+  /jobs/{jobId}:
+    get:
+      operationId: Show-Job
+      summary: Show Job
+      description: Show a Job of a Foundation Company
+      parameters:
+      - name: "jobId"
+        in: path
+        description: "The job Id defined in Foundation Desktop."
+        required: true
+        schema:
+            type: string
+            maxLength: 10
+            minLength: 1
+            example: "JANE1"
+            externalDocs:
+              url: "https://api.foundationsoft.com/docs/idfields"
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+          type: object
+          $ref: "#/components/schemas/Job"
+    patch:
+      operationId: Patch-Job
+      summary: Update Job
+      description: Make a partial update to a Job in Foundation Software
+      parameters:
+      - name: "jobId"
+        in: path
+        description: "The job Id defined in Foundation Desktop."
+        required: true
+        schema:
+            type: string
+            maxLength: 10
+            minLength: 1
+            example: "JANE1"
+            externalDocs:
+              url: "https://api.foundationsoft.com/docs/idfields"
+      requestBody:
+        required: true
+        content:
+          application/merge-patch+json:
+            schema:
+              $ref: "#/components/schemas/JobUpdate"
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+          $ref: "#/components/schemas/Job"
+        '422':
+          description: One or more fields were invalid
+components:
+  schemas:
+    # all apis will needs a problem details schema included for reference
+    ProblemDetails:
+      type: object
+      description: Problem Details
+      # leave this for all problem details
+      externalDocs:
+        url: "https://datatracker.ietf.org/doc/html/rfc7807"
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        status:
+          type: string
+        detail:
+          type: string
+        instance:
+          type: string
+    CustomerList:
+      type: array
+      items:
+        $ref: "#/components/schemas/Customer"
+    CustomerCreateList:
+      type: array
+      items:
+        $ref: "#/components/schemas/CustomerCreate"
+    Customer:
+      type: object
+      properties:
+        customerId: 
+          type: string
+          maxLength: 10
+          description: Max length 10. This is a [Foundation Id Field]("https://api.foundationsoft.com/docs/idfields")
+        name: 
+          type: string
+          maxLength: 30
+          description: Max length 30.
+        addressLine1: 
+          type: string
+          maxLength: 30
+          description: Max length 100.
+        addressLine2:
+          type: string
+          maxLength: 30
+          description: Max length 100.
+        city:
+          type: string
+          maxLength: 30
+          description: Max length 50.
+        state:
+          type: string
+          maxLength: 2
+          description: Max length 2.
+        zipCode:
+          type: string
+          maxLength: 12
+          description: Max length 12.
+        contact:
+          type: string
+          description: Max length 50.
+          maxLength: 30
+        phoneNumber:
+          type: string
+          maxLength: 12
+          description: Max length 50.
+        faxNumber:
+          type: string
+          maxLength: 12
+          description: Max length 50.
+        emailAddress:
+          type: string
+          maxLength: 100
+          description: Max length 50.
+      required:
+        - customerId
+        - name
+        - addressLine1
+        - addressLine2
+        - city
+        - state
+        - zipCode
+        - contact
+        - phoneNumber
+        - faxNumber
+        - emailAddress
+    CustomerUpdate:
+      type: object
+      properties:
+        name: 
+          type: string
+          maxLength: 30
+        addressLine1:
+          type: string
+          maxLength: 100
+        addressLine2:
+          type: string
+          maxLength: 100
+        city:
+          type: string
+          maxLength: 50
+        state:
+          type: string
+          maxLength: 2
+        zipCode:
+          type: string
+          maxLength: 12
+        contact:
+          type: string
+          maxLength: 50
+        phoneNumber:
+          type: string
+          maxLength: 50
+        faxNumber:
+          type: string
+          maxLength: 50
+        emailAddress:
+          type: string
+          maxLength: 50
+    CustomerCreate:
+      type: object
+      properties:
+        customerId: 
+          type: string
+          maxLength: 10
+          description: The CustomerId is a user-defined or autogenerated field in Foundation Software. Max length 10.
+        name: 
+          type: string
+          maxLength: 30
+        addressLine1:
+          type: string
+          maxLength: 100
+        addressLine2:
+          type: string
+          maxLength: 100
+        city:
+          type: string
+          maxLength: 50
+        state:
+          type: string
+          maxLength: 2
+        zipCode:
+          type: string
+          maxLength: 12
+        contact:
+          type: string
+          maxLength: 50
+        phoneNumber:
+          type: string
+          maxLength: 50
+        faxNumber:
+          type: string
+          maxLength: 50
+        emailAddress:
+          type: string
+          maxLength: 50
+      required:
+        - name
+    JobList:
+      type: array
+      items:
+        $ref: "#/components/schemas/Job"
+    JobCreateList:
+      type: array
+      items:
+        $ref: "#/components/schemas/JobCreate"
+    Job:
+      type: object
+      properties:
+      # TODO: Add detailed descriptions as needed;
+        jobId: 
+          type: string
+          maxLength: 10
+          description: maxLength = 10. If null, Foundation Desktop will autogenerate a value based on the next sequential value for existing records.
+        description: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        customerId: 
+          type: string
+          maxLength: 10
+          description: Value must refer to an existing [customerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-Customers) in Foundation Desktop Software.
+        originalContract: 
+          type: number
+          maxLength: 12
+          description: maxLength = 12. 
+        originalEstimate: 
+          type: number
+          maxLength: 12
+          description: maxLength = 12. 
+        jobStatus: 
+          type: string
+          description: "Valid inputs include 'active' or 'closed'"
+        attention: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        addressLine1: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        addressLine2: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        city: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        state: 
+          type: string
+          maxLength: 2
+          description: maxLength = 2. 
+        zipPostalCode: 
+          type: string
+          maxLength: 12
+          description: maxLength = 12. 
+        country: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        jobStartDate: 
+          type: string
+          description: See [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+        jobEndDate: 
+          type: string
+          description: See [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+        projectManagerId: 
+          type: string
+          maxLength: 10
+          description: Value must refer to an existing [projectManagerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-ProjectManagers) in Foundation Desktop Software.
+        taxGroupId: 
+          type: string
+          maxLength: 10
+          description: maxLength = 10. Value must refer to an existing [taxGroupId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-TaxGroups) in Foundation Desktop Software.
+        isBudgeted: 
+          type: boolean
+          description: Whether a job has a budget in Foundation Desktop software
+        isDeleted: 
+          type: boolean
+          description: Has been soft-deleted in Foundation Desktop software
+        isAddressForeign: 
+          type: boolean
+          description: Non-U.S. address
+      required:
+        - description
+    JobUpdate:
+      type: object
+      properties:
+      # TODO: Add detailed descriptions as needed;
+        jobId: 
+          type: string
+          maxLength: 10
+          description: maxLength = 10. 
+        description: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        customerId: 
+          type: string
+          maxLength: 10
+          description: Value must refer to an existing [customerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-Customers) in Foundation Desktop Software.
+        originalContract: 
+          type: number
+          maxLength: 12
+          description: maxLength = 12. 
+        originalEstimate: 
+          type: number
+          maxLength: 12
+          description: maxLength = 12. 
+        jobStatus: 
+          type: string
+          description: Valid updates values include 'active' or 'closed' 
+        attention: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        addressLine1: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        addressLine2: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        city: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        state: 
+          type: string
+          maxLength: 2
+          description: maxLength = 2. 
+        zipPostalCode: 
+          type: string
+          maxLength: 12
+          description: maxLength = 12. 
+        country: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        jobStartDate: 
+          type: string
+          description: See [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+        jobEndDate: 
+          type: string
+          description: See [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+        projectManagerId: 
+          type: string
+          maxLength: 10
+          description: Value must refer to an existing [projectManagerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-ProjectManagers) in Foundation Desktop Software.
+        taxGroupId: 
+          type: string
+          maxLength: 10
+          description: maxLength = 10. Value must refer to an existing [taxGroupId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-TaxGroups) in Foundation Desktop Software.
+        isBudgeted: 
+          type: boolean
+          description: Whether a job has a budget in Foundation Desktop software
+        isDeleted: 
+          type: boolean
+          description: Has been soft-deleted in Foundation Desktop software
+        isAddressForeign: 
+          type: boolean
+          description: Non-U.S. address
+    JobCreate:
+      type: object
+      properties:
+      # TODO: Add detailed descriptions as needed;
+        jobId: 
+          type: string
+          maxLength: 10
+          description: maxLength = 10. 
+        description: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        customerId: 
+          type: string
+          maxLength: 10
+          description: Value must refer to an existing [customerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-Customers) in Foundation Desktop Software.
+        originalContract: 
+          type: number
+          maxLength: 12
+          description: maxLength = 12. 
+        originalEstimate: 
+          type: number
+          maxLength: 12
+          description: maxLength = 12. 
+        jobStatus: 
+          type: string
+          description: Status of the job. Possible values include 'active', 'inactive', or 'closed'
+        attention: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        addressLine1: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        addressLine2: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        city: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        state: 
+          type: string
+          maxLength: 2
+          description: maxLength = 2. 
+        zipPostalCode: 
+          type: string
+          maxLength: 12
+          description: maxLength = 12. 
+        country: 
+          type: string
+          maxLength: 30
+          description: maxLength = 30. 
+        jobStartDate: 
+          type: string
+          description: See [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+        jobEndDate: 
+          type: string
+          description: See [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+        projectManagerId: 
+          type: string
+          maxLength: 10
+          description: Value must refer to an existing [projectManagerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-ProjectManagers) in Foundation Desktop Software.
+        taxGroupId: 
+          type: string
+          maxLength: 10
+          description: maxLength = 10. Value must refer to an existing [taxGroupId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-TaxGroups) in Foundation Desktop Software.
+        isBudgeted: 
+          type: boolean
+          description: Whether a job has a budget in Foundation Desktop software
+        isDeleted: 
+          type: boolean
+          description: Has been soft-deleted in Foundation Desktop software
+        isAddressForeign: 
+          type: boolean
+          description: Non-U.S. address
+      required:
+        - description
