@@ -4,11 +4,321 @@ info:
   description: Foundation Api
   version: '1.0'
 paths:
+  /phases:
+    get:
+      operationId: Get-Phases
+      summary: List Phases
+      description: Get Active Phases for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PhaseList"
+  /costclasses:
+    get:
+      operationId: Get-CostClasses
+      summary: List Cost Classes
+      description: Get Active Cost Classes for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CostClassList"
+  /departments:
+    get:
+      operationId: Get-Departments
+      summary: List Departments
+      description: Get Active Departments for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DepartmentList"
+  /arincometypes:
+    get:
+      operationId: Get-ArIncomeTypes
+      summary: List Accounts Receivable Income Types
+      description: Get Active Accounts Receivable Income Types for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ArIncomeTypeList"
+  /salestaxauthorities:
+    get:
+      operationId: Get-SalesTaxAuthorities
+      summary: List Sales Tax Authorities
+      description: Get Active Sales Tax Authorities for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SalesTaxAuthorityList"
+  /terms:
+    get:
+      operationId: Get-Terms
+      summary: List Terms
+      description: Get Active Terms for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TermList"
+  /projectmanagers:
+    get:
+      operationId: Get-ProjectManagers
+      summary: List Project Managers
+      description: Get Active Project Managers for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ProjectManagerList"
+  /costcodegroups:
+    get:
+      operationId: Get-CostCodeGroups
+      summary: List Cost Code Groups
+      description: Get Active Cost Code Groups for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CostCodeGroupList"
+  /unitofmeasures:
+    get:
+      operationId: Get-UnitOfMeasures
+      summary: List Unit Of Measures
+      description: Get Active Unit Of Measures for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnitOfMeasureList"
+  /workerscompclasses:
+    get:
+      operationId: Get-WorkersCompClasses
+      summary: List Workers Comp Classes
+      description: Get Active Workers Comp Classes for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WorkersCompClassList"
+  /workerscompstates:
+    get:
+      operationId: Get-WorkersCompStates
+      summary: Get WorkersCompStates
+      description: Get Active Workers Comp States for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WorkersCompStateList"
+  /payrolllocaltaxgroups:
+    get:
+      operationId: Get-PayrollLocalTaxGroups
+      summary: List Payroll Local Tax Groups
+      description: Get Active Payroll Local Tax Groups for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PayrollLocalTaxGroupList"
+  /trades:
+    get:
+      operationId: Get-Trades
+      summary: List Trades
+      description: Get active Trades for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TradesList"
+  /unions:
+    get:
+      operationId: Get-Unions
+      summary: List Unions
+      description: Get active Unions for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UnionsList"
+  /generalliabilitystates:
+    get:
+      operationId: Get-GeneralLiabilityStates
+      summary: List General Liability States
+      description: Get active General Liability States for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GeneralLiabilityStatesList"
+  /generalliabilityclasses:
+    get:
+      operationId: Get-GeneralLiabilityClasses
+      summary: List General Liability Classes
+      description: Get active General Liability Classes for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GeneralLiabilityClassList"
+  /minoritygroups:
+    get:
+      operationId: Get-MinorityGroups
+      summary: List Minority Groups
+      description: Get active Minority Groups for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MinorityGroupsList"
+  /generalledgeraccounts:
+    get:
+      operationId: Get-GeneralLedgerAccounts
+      summary: List General Ledger Accounts
+      description: Get active General Ledger Accounts for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GeneralLedgerAccountsList"
+  /payrollstatetaxcodes:
+    get:
+      operationId: Get-PayrollStateTaxCodes
+      summary: List Payroll State Tax Codes
+      description: Get active Payroll State Tax Codes for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PayrollStateTaxCodesList"
+  /payperiods:
+    get:
+      operationId: Get-PayPeriods
+      summary: List Pay Periods
+      description: Get active Pay Periods for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PayPeriodsList"
+  /miscellaneousdeductions:
+    get:
+      operationId: Get-MiscellaneousDeductions
+      summary: List Miscellaneous Deductions
+      description: Get active Miscellaneous Deductions for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MiscellaneousDeductionsList"
+  /miscellaneousdeductioncycles:
+    get:
+      operationId: Get-MiscellaneousDeductionCycles
+      summary: List Miscellaneous Deduction Cycles
+      description: Get active Miscellaneous Deduction Cycles for a Foundation company
+      tags:
+        - Metadata
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/MiscellaneousDeductionCyclesList"
   /customers:
     get:
       operationId: List-Customers
       summary: List Customers
       description: List Customers of a Foundation Company
+      tags:
+        - Customers
       responses:
         '200':
           description: OK
@@ -20,6 +330,8 @@ paths:
       operationId: Create-Customers
       summary: Create Customers
       description: Create Customers for a Foundation Company
+      tags:
+        - Customers
       requestBody:
         required: true
         content:
@@ -29,12 +341,12 @@ paths:
               items:
                 $ref: "#/components/schemas/CustomerCreateList"
       responses:
-        '201':
-          description: Created
+        '200':
+          description: MultiTransaction Complete
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/CustomerList"
+                $ref: "#/components/schemas/CustomerMultiTransaction"
         '422':
           description: One or more fields were invalid
   /customers/{customerId}:
@@ -42,6 +354,8 @@ paths:
       operationId: Show-Customer
       summary: Show Customer
       description: Show a Customer of a Foundation Company
+      tags:
+        - Customers
       parameters:
       - name: "customerId"
         in: path
@@ -68,6 +382,8 @@ paths:
       summary: Update Customer
       description: Make a partial update to a Customer in Foundation Software
       # foreach parameter
+      tags:
+        - Customers
       parameters:
       - name: "customerId"
         in: path # if path parameter (may be query parameter)
@@ -103,17 +419,21 @@ paths:
       operationId: List-Jobs
       summary: List Jobs
       description: List Jobs of a Foundation Company
+      tags:
+        - Jobs
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema:
-          $ref: "#/components/schemas/JobList"
+                $ref: "#/components/schemas/JobList"
     post:
       operationId: Create-Jobs
       summary: Create Jobs
       description: Create Jobs for a Foundation Company
+      tags:
+        - Jobs
       requestBody:
         required: true
         content:
@@ -121,21 +441,21 @@ paths:
             schema:
               type: array
               items:
-        $ref: "#/components/schemas/JobCreateList"
+                 $ref: "#/components/schemas/JobCreateList"
       responses:
-        '201':
-          description: Created
+        '200':
+          description: Multitransaction complete
           content:
             application/json:
               schema:
-          $ref: "#/components/schemas/JobList"
-        '422':
-          description: One or more fields were invalid
+                $ref: "#/components/schemas/JobMultiTransaction"
   /jobs/{jobId}:
     get:
       operationId: Show-Job
       summary: Show Job
       description: Show a Job of a Foundation Company
+      tags:
+        - Jobs
       parameters:
       - name: "jobId"
         in: path
@@ -154,12 +474,14 @@ paths:
           content:
             application/json:
               schema:
-          type: object
-          $ref: "#/components/schemas/Job"
+                type: object
+                $ref: "#/components/schemas/Job"
     patch:
       operationId: Patch-Job
       summary: Update Job
       description: Make a partial update to a Job in Foundation Software
+      tags:
+        - Jobs
       parameters:
       - name: "jobId"
         in: path
@@ -184,11 +506,512 @@ paths:
           content:
             application/json:
               schema:
-          $ref: "#/components/schemas/Job"
+                 $ref: "#/components/schemas/Job"
         '422':
           description: One or more fields were invalid
+  /vendors:
+    description: Vendors belonging to a Foundation company
+    summary: Vendors are used in Foundation software to _. This resource follows a started REST pattern by which consumers can list, filter, and find Vendors.
+    get:
+      operationId: List-Vendors
+      summary: List Vendors
+      description: List Vendors of a Foundation Company
+      tags:
+        - Vendors
+      responses:
+        '200':
+          description: OK
+    post:
+      operationId: Create-Vendors
+      summary: Create Vendors
+      description: Create Vendors for a Foundation Company
+      tags:
+        - Vendors
+      responses:
+        '200':
+          description: Multitransaction complete
+  /vendors/{vendorId}:
+    get:
+      operationId: Show-Vendor
+      summary: Show Vendor
+      description: Show a Vendor of a Foundation Company
+      tags:
+        - Vendors
+      parameters:
+      - name: "vendorId"
+        in: path
+        description: "The Vendor Id defined in Foundation Desktop."
+        required: true
+        schema:
+            type: string
+            maxLength: 10
+            minLength: 1
+            example: "VENDOR1"
+            externalDocs:
+              url: "https://api.foundationsoft.com/docs/idfields"
+      responses:
+        '200':
+          description: OK
+    patch:
+      operationId: Patch-Vendor
+      summary: Update Vendor
+      description: Make a partial update to a Vendor in Foundation Software
+      tags:
+        - Vendors
+      parameters:
+      - name: "vendorId"
+        in: path
+        description: "The Vendor Id defined in Foundation Desktop."
+        required: true
+        schema:
+            type: string
+            maxLength: 10
+            minLength: 1
+            example: "JANE1"
+            externalDocs:
+              url: "https://api.foundationsoft.com/docs/idfields"
+      responses:
+        '200':
+          description: OK
+        '422':
+          description: One or more fields were invalid
+  /costcodes:
+    description: CostCodes belonging to a Foundation company
+    summary: CostCodes are used in Foundation software to _. This resource follows a started REST pattern by which consumers can list, filter, and find CostCodes.
+    get:
+      operationId: List-CostCodes
+      summary: List CostCodes
+      description: List CostCodes of a Foundation Company
+      tags:
+        - CostCodes
+      responses:
+        '200':
+          description: OK
+    post:
+      operationId: Create-CostCodes
+      summary: Create CostCodes
+      description: Create CostCodes for a Foundation Company
+      tags:
+        - CostCodes
+      responses:
+        '200':
+          description: Multitransaction complete
+  /costcodes/{costcodeId}:
+    get:
+      operationId: Show-CostCode
+      summary: Show CostCode
+      description: Show a CostCode of a Foundation Company
+      tags:
+        - CostCodes
+      parameters:
+      - name: "costcodeId"
+        in: path
+        description: "The CostCode Id defined in Foundation Desktop."
+        required: true
+        schema:
+            type: string
+            maxLength: 10
+            minLength: 1
+            example: "CostCode1"
+            externalDocs:
+              url: "https://api.foundationsoft.com/docs/idfields"
+      responses:
+        '200':
+          description: OK
+    patch:
+      operationId: Patch-CostCode
+      summary: Update CostCode
+      description: Make a partial update to a CostCode in Foundation Software
+      tags:
+        - CostCodes
+      parameters:
+      - name: "costcodeId"
+        in: path
+        description: "The CostCode Id defined in Foundation Desktop."
+        required: true
+        schema:
+            type: string
+            maxLength: 10
+            minLength: 1
+            example: "JANE1"
+            externalDocs:
+              url: "https://api.foundationsoft.com/docs/idfields"
+      responses:
+        '200':
+          description: OK
+        '422':
+          description: One or more fields were invalid
+  /jobs/{jobId}/budget:
+    get:
+      operationId: Show-JobBudget
+      summary: Show JobBudget
+      description: Show a JobBudget of a Foundation Company
+      tags:
+        - JobBudgets
+      parameters:
+      - name: "jobId"
+        in: path
+        description: "The JobBudget Id defined in Foundation Desktop."
+        required: true
+        schema:
+            type: string
+            maxLength: 10
+            minLength: 1
+            example: "JobBudget1"
+            externalDocs:
+              url: "https://api.foundationsoft.com/docs/idfields"
+      responses:
+        '200':
+          description: OK
+    post:
+      operationId: Sync-JobBudget
+      summary: Sync JobBudget
+      description: Sync a JobBudget with Foundation Software
+      tags:
+        - JobBudgets
+      parameters:
+      - name: "jobId"
+        in: path
+        description: "The JobBudget Id defined in Foundation Desktop."
+        required: true
+        schema:
+            type: string
+            maxLength: 10
+            minLength: 1
+            example: "JobBudget1"
+            externalDocs:
+              url: "https://api.foundationsoft.com/docs/idfields"
+      responses:
+        '200':
+          description: OK
+        '422':
+          description: One or more fields were invalid
+  /jobs/{jobId}/budget/lineItems:
+    get:
+      operationId: Show-JobBudget-LineItems
+      summary: Show JobBudget by line items
+      description: Show array of line items from a JobBudget of a Foundation Company
+      tags:
+        - JobBudgets
+      parameters:
+      - name: "jobId"
+        in: path
+        description: "The JobBudget Id defined in Foundation Desktop."
+        required: true
+        schema:
+          type: array
+          items:
+            $ref: "#/components/schemas/JobBudgetLineItemList"
+      responses:
+        '200':
+          description: OK
+  /pendingemployees:
+    post:
+      operationId: Create-PendingEmployees
+      summary: Create PendingEmployees
+      description: Create PendingEmployees for a Foundation Company
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                 $ref: "#/components/schemas/PendingEmployeeCreateList"
+      responses:
+        '200':
+          description: Multitransaction complete
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PendingEmployeeMultiTransaction"
 components:
   schemas:
+    PhaseList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/Phase"
+    CostClassList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/CostClass"
+    Department:
+      type: object
+      description: Foundation Department
+      properties:
+        departmentId:
+          type: string
+          maxLength: 5
+        description:
+          type: string
+          maxLength: 30
+    DepartmentList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/Department"
+    ArIncomeType:
+      type: object
+      description: Foundation ArIncomeType
+      properties:
+        incomeTypeId:
+          type: string
+          maxLength: 5
+        description:
+          type: string
+          maxLength: 30
+    ArIncomeTypeList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/ArIncomeType"
+    SalesTaxAuthority:
+      type: object
+      description: Foundation SalesTaxAuthority
+      properties:
+        taxAuthorityId:
+          type: string
+          maxLength: 5
+        description:
+          type: string
+          maxLength: 30
+    SalesTaxAuthorityList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/SalesTaxAuthority"
+    Term:
+      type: object
+      description: Foundation Term
+      properties:
+        termId:
+          type: string
+          maxLength: 5
+        description:
+          type: string
+          maxLength: 30
+    TermList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/Term"
+    ProjectManager:
+      type: object
+      description: Foundation ProjectManager
+      properties:
+        projectManagerId:
+          type: string
+          maxLength: 10
+        description:
+          type: string
+          maxLength: 30
+    ProjectManagerList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/ProjectManager"
+    CostCodeGroup:
+      type: object
+      description: Foundation CostCodeGroup
+      properties:
+        costCodeGroupId:
+          type: string
+          maxLength: 10
+        description:
+          type: string
+          maxLength: 30
+    CostCodeGroupList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/CostCodeGroup"
+    UnitOfMeasure:
+      type: object
+      description: Foundation UnitOfMeasure
+      properties:
+        unitId:
+          type: string
+          maxLength: 5
+        description:
+          type: string
+          maxLength: 30
+    UnitOfMeasureList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/UnitOfMeasure"
+    WorkersCompClass:
+      type: object
+      description: Foundation WorkersCompClass
+      properties:
+        wcClassId :
+          type: string
+          maxLength: 5
+        description:
+          type: string
+          maxLength: 30
+    WorkersCompClassList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/WorkersCompClass"
+    WorkersCompState:
+      type: object
+      description: Foundation WorkersCompState
+      properties:
+        WcStateAbbreviation :
+          type: string
+          maxLength: 2
+        description:
+          type: string
+          maxLength: 30
+    WorkersCompStateList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/WorkersCompState"
+    PayrollLocalTaxGroup:
+      type: object
+      description: Foundation PayrollLocalTaxGroup
+      properties:
+        taxGroupId:
+          type: string
+          maxLength: 10
+        description:
+          type: string
+          maxLength: 30
+    PayrollLocalTaxGroupList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/PayrollLocalTaxGroup"
+    Trade:
+      type: object
+      description: Foundation Trades
+      properties:
+        tradeId:
+          type: string
+          maxLength: 5
+        description:
+          type: string
+          maxLength: 30
+    TradesList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/Trade"
+    Union:
+      type: object
+      description: Foundation Trades
+      properties:
+        unionId:
+          type: string
+          maxLength: 5
+        description:
+          type: string
+          maxLength: 30
+    UnionsList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/Union"
+    GeneralLiabilityState:
+      type: object
+      description: Foundation GeneralLiabilityStates
+      properties:
+        generalLiabilityStateAbbreviation:
+          type: string
+          maxLength: 2
+        description:
+          type: string
+          maxLength: 30
+    GeneralLiabilityStatesList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/GeneralLiabilityState"
+    GeneralLiabilityClass:
+      type: object
+      description: Foundation GeneralLiabilityClasses
+      properties:
+        generalLiabilityClassId:
+          type: string
+          maxLength: 15
+        description:
+          type: string
+          maxLength: 30
+    GeneralLiabilityClassList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/GeneralLiabilityClass"
+    MinorityGroup:
+      type: object
+      description: Foundation MinorityGroups
+      properties:
+        minorityGroupId:
+          type: string
+          maxLength: 5
+        description:
+          type: string
+          maxLength: 30
+    MinorityGroupsList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/MinorityGroup"
+    GeneralLedgerAccount:
+      type: object
+      description: Foundation GeneralLedgerAccounts
+      properties:
+        generalLedgerAccountNumber:
+          type: number
+          maxLength: 12
+        description:
+          type: string
+          maxLength: 30
+    GeneralLedgerAccountsList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/GeneralLedgerAccount"
+    PayrollStateTaxCode:
+      type: object
+      description: Foundation PayrollStateTaxCodes
+      properties:
+        payrollStateAbbreviation:
+          type: string
+          maxLength: 2
+        description:
+          type: string
+          maxLength: 30
+    PayrollStateTaxCodesList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/PayrollStateTaxCode"
+    PayPeriod:
+      type: object
+      description: Foundation PayPeriods
+      properties:
+        payPeriodId:
+          type: string
+          maxLength: 1
+    PayPeriodsList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/PayPeriod"
+    MiscellaneousDeduction:
+      type: object
+      description: Foundation MiscellaneousDeductions
+      properties:
+        miscellaneousDeductionId:
+          type: string
+          maxLength: 5
+        description:
+          type: string
+          maxLength: 30
+    MiscellaneousDeductionsList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/MiscellaneousDeduction"
+    MiscellaneousDeductionCycle:
+      type: object
+      description: Foundation MiscellaneousDeductionCycles
+      properties:
+        miscellaneousDeductionCycleId:
+          type: string
+          maxLength: 1
+        description:
+          type: string
+          maxLength: 30
+    MiscellaneousDeductionCyclesList:
+      type: array
+      items: 
+        $ref: "#/components/schemas/MiscellaneousDeductionCycle"
     # all apis will needs a problem details schema included for reference
     ProblemDetails:
       type: object
@@ -207,6 +1030,25 @@ components:
           type: string
         instance:
           type: string
+    CustomerMultiTransaction:
+      type: object
+      properties:
+        multiTransactionStatus:
+          type: string
+          description: Possible statuses include "NoActionPerformed", "Success", and "PartialSuccess"
+        transactionMessage:
+          type: string
+          description: Describes the status
+        successResult:
+          type: array
+          description: Records that were created successfully
+          items:
+            $ref: "#/components/schemas/Customer"
+        errorResult:
+          type: array
+          description: Records that were unsuccesful
+          items: 
+            $ref: "#/components/schemas/CustomerCreate"
     CustomerList:
       type: array
       items:
@@ -221,7 +1063,7 @@ components:
         customerId: 
           type: string
           maxLength: 10
-          description: Max length 10. This is a 
+          description: Max length 10. This is a [Foundation Id Field]("https://api.foundationsoft.com/docs/idfields")
         name: 
           type: string
           maxLength: 30
@@ -262,6 +1104,12 @@ components:
           type: string
           maxLength: 100
           description: Max length 50.
+        incomeType:
+          $ref: "#/components/schemas/ArIncomeType"
+        terms:
+          $ref: "#/components/schemas/Term"
+        taxAuthority:
+          $ref: "#/components/schemas/SalesTaxAuthority"
       required:
         - customerId
         - name
@@ -354,6 +1202,25 @@ components:
       type: array
       items:
         $ref: "#/components/schemas/JobCreate"
+    JobMultiTransaction:
+      type: object
+      properties:
+        multiTransactionStatus:
+          type: string
+          description: Possible statuses include "NoActionPerformed", "Success", and "PartialSuccess"
+        transactionMessage:
+          type: string
+          description: Describes the status
+        successResult:
+          type: array
+          description: Records that were created successfully
+          items:
+            $ref: "#/components/schemas/Job"
+        errorResult:
+          type: array
+          description: Records that were unsuccesful
+          items: 
+            $ref: "#/components/schemas/JobCreate"
     Job:
       type: object
       properties:
@@ -369,7 +1236,7 @@ components:
         customerId: 
           type: string
           maxLength: 10
-          description: Value must refer to an existing 
+          description: Value must refer to an existing [customerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-Customers) in Foundation Desktop Software.
         originalContract: 
           type: number
           maxLength: 12
@@ -411,18 +1278,18 @@ components:
           description: maxLength = 30. 
         jobStartDate: 
           type: string
-          description: See 
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
         jobEndDate: 
           type: string
-          description: See 
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
         projectManagerId: 
           type: string
           maxLength: 10
-          description: Value must refer to an existing 
+          description: Value must refer to an existing [projectManagerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-ProjectManagers) in Foundation Desktop Software.
         taxGroupId: 
           type: string
           maxLength: 10
-          description: maxLength = 10. Value must refer to an existing 
+          description: maxLength = 10. Value must refer to an existing [taxGroupId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-TaxGroups) in Foundation Desktop Software.
         isBudgeted: 
           type: boolean
           description: Whether a job has a budget in Foundation Desktop software
@@ -449,7 +1316,7 @@ components:
         customerId: 
           type: string
           maxLength: 10
-          description: Value must refer to an existing 
+          description: Value must refer to an existing [customerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-Customers) in Foundation Desktop Software.
         originalContract: 
           type: number
           maxLength: 12
@@ -491,18 +1358,18 @@ components:
           description: maxLength = 30. 
         jobStartDate: 
           type: string
-          description: See 
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
         jobEndDate: 
           type: string
-          description: See 
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
         projectManagerId: 
           type: string
           maxLength: 10
-          description: Value must refer to an existing 
+          description: Value must refer to an existing [projectManagerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-ProjectManagers) in Foundation Desktop Software.
         taxGroupId: 
           type: string
           maxLength: 10
-          description: maxLength = 10. Value must refer to an existing
+          description: maxLength = 10. Value must refer to an existing [taxGroupId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-TaxGroups) in Foundation Desktop Software.
         isBudgeted: 
           type: boolean
           description: Whether a job has a budget in Foundation Desktop software
@@ -527,7 +1394,7 @@ components:
         customerId: 
           type: string
           maxLength: 10
-          description: Value must refer to an existing 
+          description: Value must refer to an existing [customerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-Customers) in Foundation Desktop Software.
         originalContract: 
           type: number
           maxLength: 12
@@ -569,18 +1436,18 @@ components:
           description: maxLength = 30. 
         jobStartDate: 
           type: string
-          description: See 
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
         jobEndDate: 
           type: string
-          description: See
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
         projectManagerId: 
           type: string
           maxLength: 10
-          description:
+          description: Value must refer to an existing [projectManagerId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-ProjectManagers) in Foundation Desktop Software.
         taxGroupId: 
           type: string
           maxLength: 10
-          description: maxLength = 10. Value must refer to an existing 
+          description: maxLength = 10. Value must refer to an existing [taxGroupId](https://fs-basicapim-dev.developer.azure-api.net/api-details#api=Foundation-API&operation=List-TaxGroups) in Foundation Desktop Software.
         isBudgeted: 
           type: boolean
           description: Whether a job has a budget in Foundation Desktop software
@@ -592,3 +1459,696 @@ components:
           description: Non-U.S. address
       required:
         - description
+    JobBudgetLineItemList:
+      type: array
+      items:
+        $ref: "#/components/schemas/SimpleLineItem"
+    SimpleLineItem:
+      allOf:
+        - $ref: "#/components/schemas/LineItemDetails"
+      type: object
+      properties:
+        CompanyId: 
+          type: number
+        JobId: 
+          type: string
+          maxLength: 10
+          description: MaximumLength = 10.
+        PhaseId: 
+          type: string
+          maxLength: 10
+          description: MaximumLength = 10.
+        CostCodeId: 
+          type: string
+          maxLength: 10
+          description: MaximumLength = 10.
+        CostCodeDescription: 
+          type: string
+          maxLength: 30
+          description: MaximumLength = 30.
+        UnitOfMeasureId:
+          type: string
+          maxLength: 5
+          description: MaximumLength = 5.
+        UnitOfMeasure:
+          type: string
+        OriginalQuantity:
+          type: number
+        BidAmount:
+          type: number
+        CostClassId: 
+          type: string
+          maxLength: 5
+          description: MaximumLength = 5.
+        CostClassDescription: 
+          type: string
+          maxLength: 30
+          description: MaximumLength = 30.
+    JobBudget:
+      type: object
+      properties:
+        Job:
+          $ref: "#/components/schemas/Job"
+        Phases:
+          type: array
+          items:
+            $ref: "#/components/schemas/Phase"
+    LineItemDetails:
+      type: object
+      properties:
+        OriginalEstimatedDollars: 
+          type: number
+        OriginalEstimatedUnits: 
+          type: number
+        OriginalEstimatedCostToComplete: 
+          type: number
+    CompositeId:
+      type: object
+      properties:
+        CompanyId: 
+          type: number
+        JobId: 
+          type: string
+          maxLength: 10
+          description: MaximumLength = 10.
+        PhaseId: 
+          type: string
+          maxLength: 10
+          description: MaximumLength = 10.
+        CostCodeId: 
+          type: string
+          maxLength: 10
+          description: MaximumLength = 10.
+    Phase:
+      type: object
+      properties:
+        PhaseId: 
+          type: string
+          maxLength: 10
+          description: MaximumLength = 10.
+        Description: 
+          type: string
+          maxLength: 30
+          description: MaximumLength = 30.
+        CostCodes:
+          type: array
+          items:
+            $ref: "#/components/schemas/CostCode"
+    CostCode:
+      type: object
+      properties:
+        CostCodeId: 
+          type: string
+          maxLength: 10
+          description: MaximumLength = 10.
+        Description: 
+          type: string
+          maxLength: 30
+          description: MaximumLength = 30.
+        UnitOfMeasureId:
+          type: string
+          maxLength: 5
+          description: MaximumLength = 5.
+        UnitOfMeasure:
+          type: string
+        OriginalQuantity:
+          type: number
+        BidAmount:
+          type: number
+        CostClasses:
+          type: array
+          items:
+            $ref: "#/components/schemas/CostClass"
+    CostClass:
+      type: object
+      properties:
+        CostClassId: 
+          type: string
+          maxLength: 10
+          description: MaximumLength = 10.
+        Description: 
+          type: string
+          maxLength: 30
+          description: MaximumLength = 30.
+        LineItemDetails:
+          $ref: "#/components/schemas/LineItemDetails"
+    PendingEmployeeCreateList:
+      type: array
+      items:
+        $ref: "#/components/schemas/PendingEmployeeCreate"
+    PendingEmployeeMultiTransaction:
+      type: object
+      properties:
+        multiTransactionStatus:
+          type: string
+          description: Possible statuses include "NoActionPerformed", "Success", and "PartialSuccess"
+        transactionMessage:
+          type: string
+          description: Describes the status
+        successResult:
+          type: array
+          description: Records that were created successfully
+          items:
+            $ref: "#/components/schemas/PendingEmployee"
+        errorResult:
+          type: array
+          description: Records that were unsuccesful
+          items: 
+            $ref: "#/components/schemas/PendingEmployeeCreate"
+    PendingEmployee:
+      type: object
+      properties:
+        employeeId: 
+          type: string
+          maxLength: 10
+          description: maxLength = 10. If null, a value will be autogenerated based on the Foundation next number for Employees.
+        sSN: 
+          type: string
+          maxLength: 9
+          description: MaximumLength = 9.
+        firstName: 
+          type: string
+          maxLength: 20
+          description: MaximumLength = 20.
+        middleInitial: 
+          type: string
+          description: MaximumLength = 1.
+        lastName: 
+          type: string
+          maxLength: 20
+          description: MaximumLength = 20.
+        suffix: 
+          type: string
+          maxLength: 4
+          description: MaximumLength = 4.
+        addressLine1: 
+          type: string
+          maxLength: 30
+          description: MaximumLength = 30.
+        addressLine2: 
+          type: string
+          maxLength: 30
+          description: MaximumLength = 30.
+        city: 
+          type: string
+          maxLength: 30
+          description: MaximumLength = 30.
+        state: 
+          type: string
+          maxLength: 2
+          description: MaximumLength = 2.
+        zipCode: 
+          type: string
+          maxLength: 9
+          description: Valid lengths are 5 or 9.
+        phone: 
+          type: string
+          maxLength: 10
+          description: MaximumLength = 10.
+        cell: 
+          type: string
+          maxLength: 10
+          description: MaximumLength = 10.
+        email: 
+          type: string
+          maxLength: 100
+          description: MaximumLength = 100.
+        driversLicenseNumber: 
+          type: string
+          maxLength: 25
+          description: MaximumLength = 25.
+        driversLicenseState: 
+          type: string
+          maxLength: 2
+          description: MaximumLength = 2.
+        driversLicenseExpires: 
+          type: string
+          minLength: 0
+          description: MinimumLength = 0. 
+        dateOfBirth: 
+          type: string
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
+        dateHired: 
+          type: string
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
+        dateTerminated: 
+          type: string
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
+        dateStarted: 
+          type: string
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
+        dateRehired: 
+          type: string
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
+        gender: 
+          type: string
+          description: Valid inputs include 'M' or 'F'
+        departmentId: 
+          type: string
+          maxLength: 5
+          description: Value must refer to an existing [departmentId]
+        tradeId: 
+          type: string
+          maxLength: 5
+          description: Value must refer to an existing [tradeId]
+        unionId: 
+          type: string
+          maxLength: 5
+          description: Value must refer to an existing [unionId]
+        workersCompStateAbbreviation: 
+          type: string
+          maxLength: 2
+          description: Value must refer to an existing [workersCompStateAbbreviation]
+        workersCompClassId: 
+          type: string
+          maxLength: 5
+          description: Value must refer to an existing [workersCompClassId]
+        genLiabStateAbbreviation: 
+          type: string
+          maxLength: 2
+          description: Value must refer to an existing [genLiabStateAbbreviation]
+        genLiabClassId: 
+          type: string
+          maxLength: 15
+          description: Value must refer to an existing [genLiabClassId]
+        payRate: 
+          type: number
+          description: A precision of 12 and a scale of 5.
+        payType: 
+          type: string
+          description: MaximumLength = 1. 
+        payPeriodId: 
+          type: string
+          description: MaximumLength = 1. 
+        periodsPerYear: 
+          type: number
+          description: A value greater than 0 and less than or equal to 999999. 
+        stateOfHire: 
+          type: string
+          maxLength: 2
+          description: MaximumLength = 2. 
+        payByDirectDeposit: 
+          type: string
+          description: Valid inputs include 'Y' or 'N'
+        localTaxGroupId: 
+          type: string
+          maxLength: 10
+          description: Value must refer to an existing [localTaxGroupId]
+        pendingEmployeeTaxes:
+          type: array
+          items:
+            $ref: "#/components/schemas/PendingEmployeeTax"
+        pendingEmployeeDeductions:
+          type: array
+          items:
+            $ref: "#/components/schemas/PendingEmployeeDeduction"
+        pendingEmployeeDirectDeposits:
+          type: array
+          items:
+            $ref: "#/components/schemas/PendingEmployeeDirectDeposit"
+        department:
+          $ref: "#/components/schemas/Department"
+        trade:
+          $ref: "#/components/schemas/Trade"
+        union:
+          $ref: "#/components/schemas/Union"
+        workersCompState:
+          $ref: "#/components/schemas/WorkersCompState"
+        workersCompClass:
+          $ref: "#/components/schemas/WorkersCompClass"
+        genLiabState:
+          $ref: "#/components/schemas/GeneralLiabilityState"
+        generalLiabilityClass:
+          $ref: "#/components/schemas/GeneralLiabilityClass"
+        payPeriod:
+          $ref: "#/components/schemas/PayPeriod"
+        localTaxGroup:
+          $ref: "#/components/schemas/PayrollLocalTaxGroup"
+    PendingEmployeeTax:
+      type: object
+      properties:
+        federalFilingStatus: 
+          type: string
+          maxLength: 2
+          description: Valid inputs include 'S', Single, 'M', Married, or 'HH', Head of Household, otherwise, null if stateFilingStatus is populated
+        stateFilingStatus: 
+          type: string
+          maxLength: 2
+          description: Valid inputs include 'S', Single, 'MS', Married filing Separately, 'MJ', Married filing Jointly, or 'HH', Head of Household, otherwise, null if federalFilingStatus is populated
+        federalTaxCheckbox: 
+          type: string
+          description: If federalFilingStatus is populated, valid inputs include 'Y' or 'N', otherwise, null
+        federalTaxClaimDependents: 
+          type: number
+          description: If federalFilingStatus is populated, a precision of 10 and a scale of 2, otherwise, null
+        federalTaxOtherIncome: 
+          type: number
+          description: If federalFilingStatus is populated, a precision of 10 and a scale of 2, otherwise, null
+        federalTaxDeductions: 
+          type: number
+          description: If federalFilingStatus is populated, a precision of 10 and a scale of 2, otherwise, null
+        federalTaxExtraWithholding: 
+          type: number
+          description: If federalFilingStatus is populated, a precision of 10 and a scale of 2, otherwise, null
+        taxState: 
+          type: string
+          maxLength: 2
+          description: If stateFilingStatus is populated, value must refer to an existing [stateTax]
+        stateExemptions: 
+          type: number
+          description: If stateFilingStatus is populated, A value between than 0 and 999
+        stateTax:
+          $ref: "#/components/schemas/PayrollStateTaxCode"
+    PendingEmployeeDeduction:
+      type: object
+      properties:
+        mscDeductionId: 
+          type: string
+          maxLength: 5
+          description: Value must refer to an existing [mscDeductionId]
+        deductionCycle: 
+          type: string
+          maxLength: 1
+          description: Value must refer to an existing [deductionCycle]
+        deductionPercent: 
+          type: number
+          description: A precision of 12 and scale of 5. 0, if hourlyDedAmount or fixedDedAmount is not 0
+        hourlyDedAmount: 
+          type: number
+          maxLength: 12
+          description: A precision of 12 and scale of 5. 0, if hourlyDedAmount or fixedDedAmount is not 0
+        fixedDedAmount: 
+          type: number
+          maxLength: 12
+          description: A precision of 12 and scale of 5. 0, if hourlyDedAmount or fixedDedAmount is not 0
+        effectiveDate: 
+          type: string
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
+        deductionLimit: 
+          type: number
+          description: A precision of 12 and scale of 2.
+        description: 
+          type: string
+          maxLength: 30
+          description: MaximumLength = 30. 
+        vendorId: 
+          type: string
+          maxLength: 10
+          description: Value must refer to an existing [vendorId]
+        miscDeduction:
+          $ref: "#/components/schemas/MiscellaneousDeduction"
+        miscDeducitonCycle:
+          $ref: "#/components/schemas/MiscellaneousDeductionCycle"
+        vendor:
+          type: object
+          properties:
+            vendorId:
+              type: string
+              maxLength: 10
+              description: Value must refer to an existing [vendorId]
+            description:
+              type: string
+              maxLength: 30
+              description: MaximumLength = 10.
+    PendingEmployeeDirectDeposit:
+      type: object
+      properties:
+        dirDepAcctDescription: 
+          type: string
+          maxLength: 30
+          description: MaximumLength = 30. 
+        bankRoutingNo: 
+          type: string
+          maxLength: 25
+          description: MaximumLength = 25. 
+        bankAcctNo: 
+          type: string
+          maxLength: 25
+          description: MaximumLength = 25. 
+        accountType: 
+          type: string
+          maxLength: 1
+          description: Valid inputs include 'C', Checking, or 'S', Savings
+        distributionMethod: 
+          type: string
+          maxLength: 1
+          description: Valid inputs include 'D', Fixed Dollar Amount, 'N', % of Net, 'P', % of Remaining, or 'R', Remaining
+        distributionAmount: 
+          type: number
+          maxLength: 12
+          description: A precision of 12 and scale of 2.
+        requirePrenote: 
+          type: string
+          maxLength: 1
+          description: Valid inputs include 'Y' or 'N', otherwise, null
+    PendingEmployeeCreate:
+      type: object
+      properties:
+        employeeId: 
+          type: string
+          maxLength: 10
+          description: maxLength = 10. If null, a value will be autogenerated based on the Foundation next number for Employees.
+        sSN: 
+          type: string
+          maxLength: 9
+          description: MaximumLength = 9.
+        firstName: 
+          type: string
+          maxLength: 20
+          description: MaximumLength = 20.
+        middleInitial: 
+          type: string
+          description: MaximumLength = 1.
+        lastName: 
+          type: string
+          maxLength: 20
+          description: MaximumLength = 20.
+        suffix: 
+          type: string
+          maxLength: 4
+          description: MaximumLength = 4.
+        addressLine1: 
+          type: string
+          maxLength: 30
+          description: MaximumLength = 30.
+        addressLine2: 
+          type: string
+          maxLength: 30
+          description: MaximumLength = 30.
+        city: 
+          type: string
+          maxLength: 30
+          description: MaximumLength = 30.
+        state: 
+          type: string
+          maxLength: 2
+          description: MaximumLength = 2.
+        zipCode: 
+          type: string
+          maxLength: 9
+          description: Valid lengths are 5 or 9.
+        phone: 
+          type: string
+          maxLength: 10
+          description: MaximumLength = 10.
+        cell: 
+          type: string
+          maxLength: 10
+          description: MaximumLength = 10.
+        email: 
+          type: string
+          maxLength: 100
+          description: MaximumLength = 100.
+        driversLicenseNumber: 
+          type: string
+          maxLength: 25
+          description: MaximumLength = 25.
+        driversLicenseState: 
+          type: string
+          maxLength: 2
+          description: MaximumLength = 2.
+        driversLicenseExpires: 
+          type: string
+          minLength: 0
+          description: MinimumLength = 0. 
+        dateOfBirth: 
+          type: string
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
+        dateHired: 
+          type: string
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
+        dateTerminated: 
+          type: string
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
+        dateStarted: 
+          type: string
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
+        dateRehired: 
+          type: string
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
+        gender: 
+          type: string
+          description: Valid inputs include 'M' or 'F'
+        departmentId: 
+          type: string
+          maxLength: 5
+          description: Value must refer to an existing [departmentId]
+        tradeId: 
+          type: string
+          maxLength: 5
+          description: Value must refer to an existing [tradeId]
+        unionId: 
+          type: string
+          maxLength: 5
+          description: Value must refer to an existing [unionId]
+        workersCompStateAbbreviation: 
+          type: string
+          maxLength: 2
+          description: Value must refer to an existing [workersCompStateAbbreviation]
+        workersCompClassId: 
+          type: string
+          maxLength: 5
+          description: Value must refer to an existing [workersCompClassId]
+        genLiabStateAbbreviation: 
+          type: string
+          maxLength: 2
+          description: Value must refer to an existing [genLiabStateAbbreviation]
+        genLiabClassId: 
+          type: string
+          maxLength: 15
+          description: Value must refer to an existing [genLiabClassId]
+        payRate: 
+          type: number
+          description: A precision of 12 and a scale of 5.
+        payType: 
+          type: string
+          description: MaximumLength = 1. 
+        payPeriodId: 
+          type: string
+          description: MaximumLength = 1. 
+        periodsPerYear: 
+          type: number
+          description: A value greater than 0 and less than or equal to 999999. 
+        stateOfHire: 
+          type: string
+          maxLength: 2
+          description: MaximumLength = 2. 
+        payByDirectDeposit: 
+          type: string
+          description: Valid inputs include 'Y' or 'N'
+        localTaxGroupId: 
+          type: string
+          maxLength: 10
+          description: Value must refer to an existing [localTaxGroupId]
+        pendingEmployeeTaxes:
+          type: array
+          items:
+            $ref: "#/components/schemas/PendingEmployeeTaxCreate"
+        pendingEmployeeDeductions:
+          type: array
+          items:
+            $ref: "#/components/schemas/PendingEmployeeDeductionCreate"
+        pendingEmployeeDirectDeposits:
+          type: array
+          items:
+            $ref: "#/components/schemas/PendingEmployeeDirectDepositCreate"
+    PendingEmployeeTaxCreate:
+      type: object
+      properties:
+        federalFilingStatus: 
+          type: string
+          maxLength: 2
+          description: Valid inputs include 'S', Single, 'M', Married, or 'HH', Head of Household, otherwise, null if stateFilingStatus is populated
+        stateFilingStatus: 
+          type: string
+          maxLength: 2
+          description: Valid inputs include 'S', Single, 'MS', Married filing Separately, 'MJ', Married filing Jointly, or 'HH', Head of Household, otherwise, null if federalFilingStatus is populated
+        federalTaxCheckbox: 
+          type: string
+          description: If federalFilingStatus is populated, valid inputs include 'Y' or 'N', otherwise, null
+        federalTaxClaimDependents: 
+          type: number
+          description: If federalFilingStatus is populated, a precision of 10 and a scale of 2, otherwise, null
+        federalTaxOtherIncome: 
+          type: number
+          description: If federalFilingStatus is populated, a precision of 10 and a scale of 2, otherwise, null
+        federalTaxDeductions: 
+          type: number
+          description: If federalFilingStatus is populated, a precision of 10 and a scale of 2, otherwise, null
+        federalTaxExtraWithholding: 
+          type: number
+          description: If federalFilingStatus is populated, a precision of 10 and a scale of 2, otherwise, null
+        taxState: 
+          type: string
+          maxLength: 2
+          description: If stateFilingStatus is populated, value must refer to an existing [stateTax]
+        stateExemptions: 
+          type: number
+          description: If stateFilingStatus is populated, A value between than 0 and 999
+    PendingEmployeeDeductionCreate:
+      type: object
+      properties:
+        mscDeductionId: 
+          type: string
+          maxLength: 5
+          description: Value must refer to an existing [mscDeductionId]
+        deductionCycle: 
+          type: string
+          maxLength: 1
+          description: Value must refer to an existing [deductionCycle]
+        deductionPercent: 
+          type: number
+          description: A precision of 12 and scale of 5. 0, if hourlyDedAmount or fixedDedAmount is not 0
+        hourlyDedAmount: 
+          type: number
+          maxLength: 12
+          description: A precision of 12 and scale of 5. 0, if hourlyDedAmount or fixedDedAmount is not 0
+        fixedDedAmount: 
+          type: number
+          maxLength: 12
+          description: A precision of 12 and scale of 5. 0, if hourlyDedAmount or fixedDedAmount is not 0
+        effectiveDate: 
+          type: string
+          description: See [ISO 8601]("https://www.iso.org/iso-8601-date-and-time-format.html")
+        deductionLimit: 
+          type: number
+          description: A precision of 12 and scale of 2.
+        description: 
+          type: string
+          maxLength: 30
+          description: MaximumLength = 30. 
+        vendorId: 
+          type: string
+          maxLength: 10
+          description: Value must refer to an existing [vendorId]
+    PendingEmployeeDirectDepositCreate:
+      type: object
+      properties:
+        dirDepAcctDescription: 
+          type: string
+          maxLength: 30
+          description: MaximumLength = 30. 
+        bankRoutingNo: 
+          type: string
+          maxLength: 25
+          description: MaximumLength = 25. 
+        bankAcctNo: 
+          type: string
+          maxLength: 25
+          description: MaximumLength = 25. 
+        accountType: 
+          type: string
+          maxLength: 1
+          description: Valid inputs include 'C', Checking, or 'S', Savings
+        distributionMethod: 
+          type: string
+          maxLength: 1
+          description: Valid inputs include 'D', Fixed Dollar Amount, 'N', % of Net, 'P', % of Remaining, or 'R', Remaining
+        distributionAmount: 
+          type: number
+          maxLength: 12
+          description: A precision of 12 and scale of 2.
+        requirePrenote: 
+          type: string
+          maxLength: 1
+          description: Valid inputs include 'Y' or 'N', otherwise, null
